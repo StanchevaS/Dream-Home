@@ -1,8 +1,8 @@
-﻿using DreamHomeHotelApp.Models;
+﻿using DreamHome.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace DreamHomeHotelApp.Controllers
+namespace DreamHome.Controllers
 {
     public class HomeController : Controller
     {

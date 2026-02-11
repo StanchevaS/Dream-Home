@@ -15,4 +15,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.10" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\DreamHome.Common\DreamHome.Common.csproj" />
+    <ProjectReference Include="..\DreamHome.Infrastructure\DreamHome.Infrastructure.csproj" />
+    <ProjectReference Include="..\DreamHome.Services\DreamHome.Services.csproj" />
+  </ItemGroup>
+
 </Project>

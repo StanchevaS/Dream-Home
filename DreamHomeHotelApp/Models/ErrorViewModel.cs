@@ -1,4 +1,4 @@
-namespace DreamHomeHotelApp.Models
+namespace DreamHome.Models
 {
     public class ErrorViewModel
     {

@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace DreamHomeHotelApp.Data.Migrations
+namespace DreamHome.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {
