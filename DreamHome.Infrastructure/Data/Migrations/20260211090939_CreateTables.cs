@@ -20,8 +20,8 @@ namespace DreamHome.Data.Migrations
             migrationBuilder.AddColumn<string>(
                 name: "LastName",
                 table: "AspNetUsers",
-                type: "nvarchar(3)",
-                maxLength: 3,
+                type: "nvarchar(30)",
+                maxLength: 30,
                 nullable: false,
                 defaultValue: "");
 

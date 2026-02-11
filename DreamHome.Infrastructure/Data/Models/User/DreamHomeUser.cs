@@ -18,7 +18,7 @@ namespace DreamHome.Infrastructure.Data.Models.User
 
         [Required]
         [MinLength(DbValidationConstants.LastNameMinLength)]
-        [MaxLength(DbValidationConstants.LastNameMinLength)]
+        [MaxLength(DbValidationConstants.LastNameMaxLength)]
         public string LastName { get; set; } = null!;
     }
 }
