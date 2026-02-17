@@ -1,0 +1,67 @@
+@model CreateBookingVIewModel
+@{
+    ViewData["Title"] = "Create Booking";
+}
+<h1>@ViewData["Title"]</h1>
+
+<link href="~/css/upload.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+        <form asp-controller="Booking" asp-action="CreateBooking">
+            <div class="text-center mb-3">
+                <label asp-for="@Model.RoomNumber">RoomNumber</label>
+                <input class="form-control" autocomplete="username" aria-required="true" asp-for="@Model.RoomNumber" />
+                <span asp-validation-for="@Model.RoomNumber" class="text-danger"></span>
+            </div>
+            <div class="text-center mb-3">
+                <div class="form-group">
+                    <label asp-for="@Model.AccommodationType">AccommodationType</label>
+                    <select asp-for="@Model.AccommodationType" class="form-control" id="exampleFormControlSelect1" required>
+                        <option>BO</option>
+                        <option>BB</option>
+                        <option>HB</option>
+                        <option>FB</option>
+                        <option>All inclusive</option>
+                    </select>
+                    <span asp-validation-for="@Model.AccommodationType" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="text-center mb-3">
+                <label asp-for="@Model.StartDate">StartDate</label>
+                <input type="date" class="form-control" autocomplete="username" aria-required="true" asp-for="@Model.StartDate" />
+                <span asp-validation-for="@Model.StartDate" class="text-danger"></span>
+            </div>
+            <div class="text-center mb-3">
+                <label asp-for="@Model.EndDate">EndDate</label>
+                <input type="date" class="form-control" autocomplete="username" aria-required="true" asp-for="@Model.EndDate" />
+                <span asp-validation-for="@Model.EndDate" class="text-danger"></span>
+            </div>
+            <div class="text-center mb-3">
+                <div class="form-group">
+                    <label asp-for="@Model.SpaType">SpaType</label>
+                    <select asp-for="@Model.SpaType" class="form-control" id="exampleFormControlSelect1" required>
+                        <option>Art</option>
+                        <option>Character</option>
+                        <option>Animal</option>
+                        <option>Office</option>
+                        <option>People</option>
+                        <option>Food & Drink</option>
+                        <option>Architecture</option>
+                        <option>Technology</option>
+                    </select>
+                    <span asp-validation-for="@Model.SpaType" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="text-center">
+                <form asp-area="" asp-controller="Booking" asp-action="CreateBooking" class="input-group-sm">
+                    <input type="submit" value="Book" class="uploadBtn" />
+                </form>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
