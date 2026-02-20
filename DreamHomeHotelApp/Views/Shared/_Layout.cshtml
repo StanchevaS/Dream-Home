@@ -4,37 +4,103 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - DreamHome</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/DreamHome.styles.css" asp-append-version="true" />
+    <link rel="shortcut icon" type="image/x-icon" href="~/themes/montana-master/img/favicon.png">
+    <link rel="stylesheet" href="~/themes/montana-master/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/themes/montana-master/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/themes/montana-master/css/magnific-popup.css">
+    <link rel="stylesheet" href="~/themes/montana-master/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/themes/montana-master/css/themify-icons.css">
+    <link rel="stylesheet" href="~/themes/montana-master/css/nice-select.css">
+    <link rel="stylesheet" href="~/themes/montana-master/css/flaticon.css">
+    <link rel="stylesheet" href="~/themes/montana-master/css/gijgo.css">
+    <link rel="stylesheet" href="~/themes/montana-master/css/animate.css">
+    <link rel="stylesheet" href="~/themes/montana-master/css/slicknav.css">
+    <link rel="stylesheet" href="~/themes/montana-master/css/style.css">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">DreamHome</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        @if (User?.Identity?.IsAuthenticated ?? false)
-                        {
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Booking" asp-action="CreateBooking">Create Booking</a>
-                            </li>
-                        }
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
+        <div class="header-area ">
+            <div id="sticky-header" class="main-header-area">
+                <div class="container-fluid p-0">
+                    <div class="row align-items-center no-gutters">
+                        <div class="col-xl-5 col-lg-6">
+                            <div class="main-menu  d-none d-lg-block">
+                                <nav>
+                                    <ul id="navigation">
+                                        <li><a class="active" href="~/themes/montana-master/index.html">Home</a></li>
+                                        <li><a href="~/themes/montana-master/rooms.html">Rooms</a></li>
+                                        <li><a href="~/themes/montana-master/about.html">About</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-2">
+                            <div class="logo-img">
+                                <a asp-area="" asp-action="Index" asp-controller="Home">
+                                    <img class="logo-img" src="~/themes/montana-master/img/logo-no-background.png" alt="" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-4 d-none d-lg-block">
+                            <div class="book_room">
+                                <div class="socail_links">
+                                    <ul>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-facebook-square"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <i class="fa fa-instagram"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                @if (User?.Identity?.IsAuthenticated ?? false)
+                                {
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a class="popup-with-form" href="#test-form">Book A Room</a>
+                                    </div>
+                                    <div class="book_btn main-menu d-none d-lg-block">
+                                        <nav>
+                                            <ul id="navigation">
+                                                <li>
+                                                    <a href="#">Account <i class="ti-angle-down"></i></a>
+                                                    <ul class="submenu">
+                                                        <li><button href="~/themes/montana-master/blog.html">Reservations</button></li>
+                                                        <li><button href="~/themes/montana-master/single-blog.html">Edit Profile</button></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a  asp-action="Register" asp-controller="User">Register</a>
+                                    </div>
+                                    <div class="book_btn d-none d-lg-block">
+                                        <a asp-action="Login" asp-controller="User">Login</a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="mobile_menu d-block d-lg-none"></div>
+                        </div>
+                    </div>
+                    </div>
             </div>
-        </nav>
+        </div>
     </header>
-    <div class="container">
+    <div>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -48,6 +114,50 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <!-- JS here -->
+    <script src="~/themes/montana-master/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="~/themes/montana-master/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="~/themes/montana-master/js/popper.min.js"></script>
+    <script src="~/themes/montana-master/js/bootstrap.min.js"></script>
+    <script src="~/themes/montana-master/js/owl.carousel.min.js"></script>
+    <script src="~/themes/montana-master/js/isotope.pkgd.min.js"></script>
+    <script src="~/themes/montana-master/js/ajax-form.js"></script>
+    <script src="~/themes/montana-master/js/waypoints.min.js"></script>
+    <script src="~/themes/montana-master/js/jquery.counterup.min.js"></script>
+    <script src="~/themes/montana-master/js/imagesloaded.pkgd.min.js"></script>
+    <script src="~/themes/montana-master/js/scrollIt.js"></script>
+    <script src="~/themes/montana-master/js/jquery.scrollUp.min.js"></script>
+    <script src="~/themes/montana-master/js/wow.min.js"></script>
+    <script src="~/themes/montana-master/js/nice-select.min.js"></script>
+    <script src="~/themes/montana-master/js/jquery.slicknav.min.js"></script>
+    <script src="~/themes/montana-master/js/jquery.magnific-popup.min.js"></script>
+    <script src="~/themes/montana-master/js/plugins.js"></script>
+    <script src="~/themes/montana-master/js/gijgo.min.js"></script>
+
+    <!--contact js-->
+    <script src="~/themes/montana-master/js/contact.js"></script>
+    <script src="~/themes/montana-master/js/jquery.ajaxchimp.min.js"></script>
+    <script src="~/themes/montana-master/js/jquery.form.js"></script>
+    <script src="~/themes/montana-master/js/jquery.validate.min.js"></script>
+    <script src="~/themes/montana-master/js/mail-script.js"></script>
+
+    <script src="~/themes/montana-master/js/main.js"></script>
+    <script>
+        $('#datepicker').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+        });
+        $('#datepicker2').datepicker({
+            iconsLibrary: 'fontawesome',
+            icons: {
+                rightIcon: '<span class="fa fa-caret-down"></span>'
+            }
+
+        });
+    </script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
 </html>
